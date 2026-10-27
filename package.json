@@ -1,0 +1,44 @@
+{
+  "name": "@local/dsh-session-view",
+  "version": "1.0.0",
+  "private": true,
+  "description": "在 DSH Web 侧边栏新增「会话视图」面板，列出所有会话及其实时运行状态，点击可直接打开。",
+  "author": "cypher-yht",
+  "license": "MIT",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "session",
+    "session-list",
+    "panel"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cypher-yht/dsh-plugins-session-view.git"
+  },
+  "homepage": "https://github.com/cypher-yht/dsh-plugins-session-view#readme",
+  "bugs": {
+    "url": "https://github.com/cypher-yht/dsh-plugins-session-view/issues"
+  },
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": ["index.js", "client.js", "cordis.patch.yml", "locale/*.json", "icon.svg"],
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-session",
+        "@deepseek-ai/dsh-client-ui-workspace"
+      ]
+    }
+  }
+}

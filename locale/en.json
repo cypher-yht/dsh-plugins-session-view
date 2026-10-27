@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Session View",
+    "description": "Adds a Sessions panel that lists every session with its live status."
+  }
+}

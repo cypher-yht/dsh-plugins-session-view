@@ -1,0 +1,3 @@
+- insert:
+    - id: session-view
+      name: '@local/dsh-session-view'
